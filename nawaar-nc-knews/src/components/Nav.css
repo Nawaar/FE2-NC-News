@@ -4,3 +4,13 @@ nav {
     display: flex;
     flex-direction: column;
 }
+
+.topic-endpoints {
+    text-transform: capitalize;
+    text-align: left;
+    display: inline;
+    padding: 1em;
+    font-size: 0.9em;
+    text-decoration: none;
+    color: #7D7C7D;
+}
