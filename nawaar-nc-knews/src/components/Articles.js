@@ -48,8 +48,8 @@ class Articles extends Component {
     componentDidUpdate(prevProps, prevState) {
         const { topic } = this.props;
         if (topic !== prevProps.topic) {
-            window.addEventListener('scroll', this.throttledScroll)
             this.setState({ page: 1, articles: [] }, this.fetchArticles)
+            window.addEventListener('scroll', this.throttledScroll)
         }
     }
 
