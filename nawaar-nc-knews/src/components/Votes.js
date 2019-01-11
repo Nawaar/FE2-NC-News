@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-// import PropTypes from 'prop-types';
+import PropTypes from 'prop-types';
 import * as api from '../api';
 import { Button, Glyphicon } from 'react-bootstrap';
 
@@ -11,15 +11,14 @@ class Votes extends Component {
         const { votes } = this.props
         const { voteChange } = this.state
         return (
-            <div>
-                <Button onClick={() => { this.updateVotes(1) }} disabled={voteChange === 1} >
+            <div className="votesArtCom">
+                <Button onClick={() => { this.updateVotes(1) }} disabled={voteChange === 1} bsSize="xsmall">
                     <Glyphicon glyph="arrow-up" />
                 </Button>
                 <p>{votes + voteChange}</p>
-                <Button onClick={() => { this.updateVotes(-1) }} disabled={voteChange === -1}>
+                <Button onClick={() => { this.updateVotes(-1) }} disabled={voteChange === -1} bsSize="xsmall">
                     <Glyphicon glyph="arrow-down" />
                 </Button>
-
             </div>
         );
     }
@@ -39,7 +38,9 @@ class Votes extends Component {
 }
 
 Votes.propTypes = {
-
+    votes: PropTypes.number,
+    article_id: PropTypes.number,
+    comment_id: PropTypes.number
 };
 
 export default Votes;

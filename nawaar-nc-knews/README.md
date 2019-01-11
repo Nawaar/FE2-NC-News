@@ -1,3 +1,11 @@
+## About
+
+A front-end website created to talk and discuss different topics - whatever you feel like saying.
+
+WEBSITE: 
+
+BACKEND: [https://nawaar-nc-knews.herokuapp.com/](https://nawaar-nc-knews.herokuapp.com/)
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts

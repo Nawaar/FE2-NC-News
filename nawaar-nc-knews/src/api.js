@@ -3,8 +3,15 @@ import axios from 'axios';
 // const BASE_URL = 'https://nawaar-nc-knews.herokuapp.com/api';
 
 axios.defaults.baseURL = 'https://nawaar-nc-knews.herokuapp.com/api';
-axios.defaults.headers.common['Authorization'] = `BEARER ${localStorage.AUTH_TOKEN}`;
 axios.defaults.headers.common['Content-Type'] = `application/json`;
+
+if (localStorage.AUTH_TOKEN) {
+    axios.defaults.headers.common['Authorization'] = `BEARER ${localStorage.AUTH_TOKEN}`;
+}
+
+export const setAuthorizationHeader = async (token) => {
+    axios.defaults.headers.common['Authorization'] = `BEARER ${token}`;
+}
 
 export const getTopics = async () => {
     const { data } = await axios.get('/topics')
@@ -22,8 +29,8 @@ export const getArticle = async (article_id) => {
     return data.article
 }
 
-export const getComments = async (article_id) => {
-    const { data } = await axios.get(`/articles/${article_id}/comments`)
+export const getComments = async (article_id, page) => {
+    const { data } = await axios.get(`/articles/${article_id}/comments?p=${page}`)
     return data.comments
 }
 
@@ -56,10 +63,26 @@ export const postComment = async (article_id, user_id, comment) => {
 }
 
 export const postArticle = async (topic, user_id, title, body) => {
-    const { data } = await axios.post(`topics/${topic}/articles`, {
+    const { data } = await axios.post(`/topics/${topic}/articles`, {
         user_id,
         title,
         body
     })
     return data.article
+}
+
+export const deleteArticle = async (article_id) => {
+    await axios.delete(`/articles/${article_id}`)
+}
+
+export const deleteComment = async (article_id, comment_id) => {
+    await axios.delete(`/articles/${article_id}/comments/${comment_id}`)
+}
+
+export const postTopic = async (slug, description) => {
+    const { data } = await axios.post(`/topics`, {
+        slug,
+        description
+    })
+    return data.topic
 }

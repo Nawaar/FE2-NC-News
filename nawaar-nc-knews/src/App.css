@@ -8,5 +8,12 @@
 
 .main {
   grid-area: main;
-  background-color: yellow;
+  background-color:rgb(242,242,242);
+  padding-top: 50px
+}
+
+.authpage {
+  grid-area: main;
+  background-color:rgb(242,242,242);
+  padding-top: 50px
 }

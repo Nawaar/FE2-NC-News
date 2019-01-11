@@ -5,3 +5,7 @@
     display: block;
     margin-left: 100px;
 }
+
+.navigateButton {
+    float: none;
+}

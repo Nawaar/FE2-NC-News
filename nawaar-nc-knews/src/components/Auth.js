@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import * as api from '../api';
+import './Auth.css';
 
 class Auth extends Component {
     state = {
@@ -14,14 +15,17 @@ class Auth extends Component {
         return (
             token
                 ? children
-                : <form onSubmit={this.submitLogin}>
-                    <label htmlFor="username">Username:</label>
-                    <input type="text" id="username" onChange={this.handleChange} value={username} />
-                    <label htmlFor="password">Password:</label>
-                    <input type="password" id="password" onChange={this.handleChange} value={password} />
-                    <button>Log in</button>
-                    {falseAttempt && <p>WRONG!!</p>}
-                </form>
+                :
+                <section className="authpage">
+                    <form onSubmit={this.submitLogin} className="authForm">
+                        <label htmlFor="username">Username:</label>
+                        <input type="text" id="username" onChange={this.handleChange} value={username} required="required" />
+                        <label htmlFor="password">Password:</label>
+                        <input type="password" id="password" onChange={this.handleChange} value={password} required="required" />
+                        <button>Log in</button>
+                        {falseAttempt && <p>WRONG!!</p>}
+                    </form>
+                </section>
         );
     }
 

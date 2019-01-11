@@ -9,8 +9,8 @@ class CommentForm extends Component {
         const { comment } = this.state
         return (
             <form onSubmit={this.addComment}>
-                <textarea id="comment" value={comment} onChange={this.handleChange}>Enter your comment ...</textarea>
-                <button>Submit</button>
+                <textarea id="comment" value={comment} onChange={this.handleChange} required="required" rows="3"></textarea>
+                <button>Submit Comment</button>
             </form>
         );
     }

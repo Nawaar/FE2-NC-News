@@ -1,9 +1,101 @@
-.comment {
+.articlePage .comment {
     text-align: left;
     display: block;
     margin: 0px 100px;
 }
 
-.ArticlePage {
-    margin: 20px
+.articlePage h4 {
+    margin: 20px 100px;
+}
+
+.articlePage form {
+    margin: 20px 100px;
+}
+
+.articlePage form textarea {
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.articlePage {
+    margin: 50px;
+    text-align: left;
+}
+
+.articlePage .articleContent span .votesArtCom {
+    text-align: center;
+    grid-area: votes;
+    padding-right: 5px;
+    padding-left: 5px;
+    align-self: center;
+}
+
+.articlePage .articleContent span .votesArtCom p {
+    margin: 1px;
+    line-height: inherit;
+}
+
+.articlePage .articleContent span {
+    display: grid;
+    grid-template-areas: 'votes body';
+    margin-bottom: 25px;
+}
+
+.articlePage .articleContent span p {
+    grid-area: body;
+    margin: 0px;
+    align-self: center;
+}
+
+.articlePage .articleContent span .votesArtCom button {
+    padding: 5px;
+    block-size: 25px
+}
+
+.articlePage .articleContent .deleteButton {
+    margin: 5px;
+}
+
+.articlePage .comment span {
+    display: grid;
+    grid-template-columns: 1fr 99fr;
+    grid-template-areas: 'commentvotes commentbody';
+    margin-bottom: 25px;
+}
+
+.articlePage .comment span .votesArtCom {
+    text-align: center;
+    grid-area: commentvotes;
+    padding-right: 5px;
+    padding-left: 5px;
+}
+
+.articlePage .comment span .votesArtCom button {
+    padding: 5px;
+    block-size: 25px;
+    width: 100%;
+}
+
+.articlePage .comment span .votesArtCom p {
+    margin: 1px;
+    line-height: inherit;
+}
+
+
+.articlePage .comment span p {
+    grid-area: commentbody;
+    margin: 0px;
+}
+
+.articlePage .comment section {
+    display: grid;
+    grid-template-areas: 'info del'
+}
+
+.articlePage .comment section h6 {
+    grid-area: info
+}
+
+.articlePage .comment section .commentDelButton {
+    grid-area: del;
 }

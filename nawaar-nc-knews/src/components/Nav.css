@@ -1,16 +1,29 @@
 nav {
     grid-area: nav;
-    background-color:rgb(4, 4, 85);
+    background-color: white;
     display: flex;
     flex-direction: column;
 }
 
-.topic-endpoints {
+nav .endpoints {
     text-transform: capitalize;
     text-align: left;
     display: inline;
     padding: 1em;
     font-size: 0.9em;
     text-decoration: none;
-    color: #7D7C7D;
+    color:red;
+}
+
+nav hr {
+    border: 1px solid rgba(0, 0, 0, 0.432);
+    margin: 0;
+}
+
+nav h4 {
+    text-align: left;
+    margin: 0;
+    padding: 1em;
+    font-size: 0.9em;
+    color: rgba(0, 0, 0, 0.616)
 }

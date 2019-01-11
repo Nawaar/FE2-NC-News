@@ -1,33 +1,35 @@
-.authForm {
+.articleForm {
     overflow: hidden;
 }
  
-.authForm label {
+.articleForm label {
     float: left;
     width: 200px;
     padding-right: 24px;
 }
  
-.authForm input {
+.articleForm input, textarea, select {
     float: left;
     width: calc(100% - 200px);
 }
  
-.authForm button {
+.articleForm button {
     float: right;
     width: calc(100% - 200px);
 }
 
-.authForm label {
+.articleForm label {
     grid-column: 1 / 2;
 }
  
-.authForm input,
-button {
+.articleForm input,
+button,
+textarea,
+select {
     grid-column: 2 / 3;
 }
 
-.authForm {
+.articleForm {
     display: grid;
     grid-template-columns: 200px 1fr;
     grid-gap: 16px;
