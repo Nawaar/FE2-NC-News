@@ -2,7 +2,7 @@
 
 A front-end website created to talk and discuss different topics - whatever you feel like saying.
 
-WEBSITE: 
+WEBSITE: [https://nawaar-nc-knews.netlify.com/](https://nawaar-nc-knews.netlify.com/)
 
 BACKEND: [https://nawaar-nc-knews.herokuapp.com/](https://nawaar-nc-knews.herokuapp.com/)
 
