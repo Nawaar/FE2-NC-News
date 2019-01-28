@@ -26,7 +26,7 @@ class Article extends Component {
                 : <div className="articlePage">
                     {article_id &&
                         <section className="articleContent">
-                            <h5>{topic.toUpperCase()}・Posted by {author} {moment(created_at).startOf('day').fromNow()}</h5>
+                            <h5>{topic.toUpperCase()}・Posted by {author} {moment(created_at).fromNow()}</h5>
                             <h2>{title}</h2>
                             <span>
                                 <p>{body}</p>
@@ -44,7 +44,7 @@ class Article extends Component {
                         comments.map(({ body, comment_id, created_at, author, votes }) => (
                             <span key={comment_id} className="comment">
                                 <section>
-                                    <h6>{author} ・ {moment(created_at).startOf('day').fromNow()}</h6>
+                                    <h6>{author} ・ {moment(created_at).fromNow()}</h6>
                                     {author === currentUser.username && <Button onClick={() => this.deleteComment(comment_id)} className="commentDelButton">Delete Comment</Button>}
                                 </section>
                                 <span>

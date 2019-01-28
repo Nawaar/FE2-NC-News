@@ -14,17 +14,20 @@ import Err from './components/Err';
 class App extends Component {
   state = {
     topics: [],
-    access: true
+    access: true,
+    currentUser: null,
+    token: null,
+    nav: false
   }
   render() {
-    const { topics, token, currentUser, access } = this.state
+    const { topics, token, currentUser, access, nav } = this.state
     return (
       <div className="App">
-        <Header currentUser={currentUser} />
+        <Header currentUser={currentUser} handleNav={this.handleNav} />
         <Auth handleUserToken={this.handleUserToken} token={token}>
-          {access &&
+          {access && currentUser &&
             <>
-              <Nav topics={topics} />
+              {nav && <Nav topics={topics} handleNav={this.handleNav} className="main" />}
               <Router className="main">
                 <Articles path='/' />
                 <Articles path='/topics/:topic' topics={topics} />
@@ -41,6 +44,12 @@ class App extends Component {
     );
   }
 
+  handleNav = () => {
+    this.setState((state) => {
+      return { nav: !state.nav }
+    })
+  }
+
   addTopic = (topic) => {
     this.setState((state) => {
       return { topics: [...state.topics, topic] }
@@ -48,12 +57,12 @@ class App extends Component {
   }
 
   componentDidMount() {
-    if (localStorage.AUTH_TOKEN
-      && localStorage.currentUser
+    if (localStorage.getItem('AUTH_TOKEN')
+      && localStorage.getItem('currentUser')
     ) {
       this.setState({
-        token: localStorage.AUTH_TOKEN,
-        currentUser: JSON.parse(localStorage.currentUser)
+        token: localStorage.getItem('AUTH_TOKEN'),
+        currentUser: JSON.parse(localStorage.getItem('currentUser'))
       }, () => {
         this.fetchTopics()
       })

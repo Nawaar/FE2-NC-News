@@ -2,12 +2,17 @@ import React from 'react';
 import './Header.css';
 import logo from '../images/logo.png';
 import PropTypes from 'prop-types';
+import { Link } from '@reach/router';
+import { Glyphicon } from 'react-bootstrap';
 
-const Header = ({ currentUser }) => {
+const Header = ({ currentUser, handleNav }) => {
     return (
         <div className="header">
-            <a href='/'><img src={logo} alt="Logo" className="logo" /></a>
-            <h1>NC-Knews - Cohort 27 - Talk</h1>
+            <span>
+                <Glyphicon glyph="align-justify" className="icon" onClick={handleNav} />
+                <Link to='/'><img src={logo} alt="Logo" className="logo" /></Link>
+            </span>
+            <h1>NC-Knews - Cohort 27 - Gossip</h1>
             {currentUser &&
                 <section className="user">
                     <img src={currentUser.avatar_url} alt="avatar" />

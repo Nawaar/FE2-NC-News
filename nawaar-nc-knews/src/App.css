@@ -1,19 +1,22 @@
 .App {
   text-align: center;
   display: grid;
-  height: 100vh;
-  grid-template: 5fr 95fr / 1fr 4fr;
-  grid-template-areas: 'header header' 'nav main'
+  height: 100%;
+  grid-template: 10vh 1fr / 1fr;
+  grid-template-areas: 'header' 'main';
+  background-color:rgb(242,242,242);
 }
 
 .main {
   grid-area: main;
   background-color:rgb(242,242,242);
-  padding-top: 50px
+  padding-top: 50px;
+  height: calc(100% + 100vh)
 }
 
 .authpage {
   grid-area: main;
   background-color:rgb(242,242,242);
-  padding-top: 50px
+  padding-top: 50px;
+  height: 100vh;
 }

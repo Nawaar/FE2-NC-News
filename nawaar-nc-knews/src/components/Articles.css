@@ -3,9 +3,21 @@
     text-align: left;
     text-decoration: none;
     display: block;
-    margin-left: 100px;
+    margin-left: 5%;
+    margin-right: 1%;
+    color: black;
+}
+
+.article:hover {
+    color: red;
+    text-decoration: none;
 }
 
 .navigateButton {
     float: none;
+}
+
+.article hr {
+    border: 0.3px solid rgba(0, 0, 0, 0.062);
+    margin: 0;
 }

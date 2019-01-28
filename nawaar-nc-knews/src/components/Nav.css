@@ -1,29 +1,49 @@
 nav {
-    grid-area: nav;
+    display: grid;
+    height: 100%;
+    grid-template: 10vh 90vh / 1fr;
+    grid-template-areas: 'header-nav' 'nav-main';
+    
+}
+
+nav section {
+    grid-area: nav-main;
     background-color: white;
     display: flex;
     flex-direction: column;
+    position: absolute;
+    width: 100%;
+    z-index: 1;
+    left: 0;
+    top: 10vh;
+    overflow-x: hidden;
 }
 
-nav .endpoints {
+nav section .endpoints {
     text-transform: capitalize;
-    text-align: left;
+    text-align: center;
     display: inline;
     padding: 1em;
     font-size: 0.9em;
     text-decoration: none;
     color:red;
+    border: none;
+    background-color: white;
 }
 
-nav hr {
+nav section hr {
     border: 1px solid rgba(0, 0, 0, 0.432);
     margin: 0;
 }
 
-nav h4 {
-    text-align: left;
+nav section h4 {
+    text-align: center;
     margin: 0;
     padding: 1em;
     font-size: 0.9em;
     color: rgba(0, 0, 0, 0.616)
+}
+
+nav span {
+    grid-area: header-nav;
 }

@@ -23,6 +23,7 @@ class TopicForm extends Component {
             </form>
         );
     }
+
     handleChange = ({ target: { value, id } }) => {
         this.setState({
             [id]: value

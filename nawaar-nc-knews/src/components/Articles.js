@@ -19,7 +19,8 @@ class Articles extends Component {
         const { topic, topics } = this.props;
         return (
             err
-                ? topics.find(aTopic => aTopic.slug === topic.toLowerCase())
+                ?
+                topics ? topics.find(aTopic => aTopic.slug === topic.toLowerCase())
                     ? <>
                         <p>Sorry, they are no articles under this topic. You can write one instead.</p>
                         <button className="navigateButton" onClick={() => this.handleClick('article')}>Write Article</button>
@@ -28,12 +29,17 @@ class Articles extends Component {
                         <p>Sorry, topic does not exist. You can create one instead.</p>
                         <button className="navigateButton" onClick={() => this.handleClick('topic')}>Create Topic</button>
                     </>
+                    : <>
+                        <p>Sorry, they are no articles. You can write one instead.</p>
+                        <button className="navigateButton" onClick={() => this.handleClick('article')}>Write Article</button>
+                    </>
                 : <>
                     {
                         articles.map(({ title, article_id, author, created_at, votes }) => (
                             <Link to={`/article/${article_id}`} key={article_id} className="article">
+                                <hr></hr>
                                 <h3>{title}</h3>
-                                <h5>{author}・{moment(created_at).startOf('day').fromNow()}・votes: {votes}</h5>
+                                <h5>{author}・{moment(created_at).fromNow()}・votes: {votes}</h5>
                             </Link>
                         ))
                     }

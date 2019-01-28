@@ -1,25 +1,46 @@
 .header {
     grid-area: header;
     display: grid;
-    grid-template-columns: 1fr 3fr 1fr;
-    grid-template-areas: 'logo title user';
-        background-color: black;
+    grid-template-columns: 20% 3fr 1fr;
+    grid-template-areas: 'iconlogo title user';
+    background-color: black;
+}
+
+.header span {
+    grid-area: iconlogo;
+    display: inline;
+    align-self: center;
+}
+
+.header .icon {
+    align-self: flex-start;
+    width: 20%;
+    color: rgba(255, 0, 0, 0.575);
+    margin: 5%;
 }
 
 .header h1 {
     grid-area: title;
     color: white;
-    font-size: 20px
+    font-size: 100%;
+    margin: 5%;
+    align-self: center;
+}
+
+@media (max-width: 500px) {
+    .header h1 {
+        font-size: 50%;
+    }
 }
 
 .header .logo {
-    grid-area: logo;
-    width: 100%;
-    align-self: center
+    width: 65%;
+    align-self: center;
 }
 
 .header .user {
     grid-area: user;
+    display: block;
     display: grid;
     grid-template: 1fr 1fr / 1fr 2fr;
     grid-template-areas: 'avatar name' 'avatar username'
@@ -27,17 +48,35 @@
 
 .header .user img {
     grid-area: avatar;
-    width: 100%
+    width: 100%;
+    align-self: center;
 }
 
 .header .user #name {
     grid-area: name;
     color: red;
     align-self: flex-end;
-    margin: 0px
+    margin: 0px;
+    font-size: 100%;
 }
 
 .header .user #username {
     grid-area: username;
     color: red;
+    font-size: 100%;
+}
+
+@media (max-width: 500px) {
+    .header .user img {
+        display: none;
+    }
+    .header .user #username {
+        font-size: 50%;
+    }
+    .header .user #name {
+        font-size: 50%;
+    }
+    .header .user {
+        grid-template-areas: 'name name' 'username username'
+    }
 }

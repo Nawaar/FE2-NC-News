@@ -10,12 +10,12 @@
  
 .topicForm input {
     float: left;
-    width: calc(100% - 200px);
+    width: 90%;
 }
  
 .topicForm button {
     float: right;
-    width: calc(100% - 200px);
+    width: 90%;
 }
 
 .topicForm label {
@@ -29,6 +29,6 @@ button {
 
 .topicForm {
     display: grid;
-    grid-template-columns: 200px 1fr;
-    grid-gap: 16px;
+    grid-template-columns: 20% 1fr;
+    grid-gap: 10px;
 }
